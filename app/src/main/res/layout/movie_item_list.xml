@@ -9,7 +9,7 @@
         app:cardElevation="10dp"
         app:cardCornerRadius="10dp"
         android:layout_margin="5dp"
-        app:cardBackgroundColor="#FFFFFF"
+        app:cardBackgroundColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -38,14 +38,14 @@
                     android:textStyle="bold"
                     android:textSize="25sp"
                     android:layout_margin="10dp"
-                    android:text="Movie Name"
+                    android:text="Name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
                 <TextView
                     android:id="@+id/textdate"
                     android:layout_margin="10dp"
-                    android:text="Movie Date"
+                    android:text="Description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 

@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">RecyclerViewExample</string>
+    <string name="app_name">REX</string>
+    <string name="some_text">Countries</string>
 </resources>

@@ -1,12 +1,12 @@
 package com.example.recyclerviewexample;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,12 +15,12 @@ public class MyMovieAdapter extends RecyclerView.Adapter<MyMovieAdapter.ViewHold
 
     MyMovieData[] myMovieData;
     Context context;
+    private Context activity;
 
     public MyMovieAdapter(MyMovieData[] myMovieData,MainActivity activity) {
         this.myMovieData = myMovieData;
         this.context = activity;
     }
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -36,13 +36,9 @@ public class MyMovieAdapter extends RecyclerView.Adapter<MyMovieAdapter.ViewHold
         holder.textViewName.setText(myMovieDataList.getMovieName());
         holder.textViewDate.setText(myMovieDataList.getMovieDate());
         holder.movieImage.setImageResource(myMovieDataList.getMovieImage());
+        Intent intent = new Intent(context, ListViewCheckboxesActivity.class);
+        context.startActivity(intent);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, myMovieDataList.getMovieName(), Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     @Override
@@ -56,6 +52,7 @@ public class MyMovieAdapter extends RecyclerView.Adapter<MyMovieAdapter.ViewHold
         TextView textViewName;
         TextView textViewDate;
 
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             movieImage = itemView.findViewById(R.id.imageview);
@@ -64,5 +61,4 @@ public class MyMovieAdapter extends RecyclerView.Adapter<MyMovieAdapter.ViewHold
 
         }
     }
-
 }

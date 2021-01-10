@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
                 new MyMovieData("Good Deeds","2012 film",R.drawable.good_deeds),
                 new MyMovieData("Hulk","2003 film",R.drawable.hulk),
                 new MyMovieData("Avatar","2009 film",R.drawable.avatar),
+                new MyMovieData("Storks","2019 film",R.drawable.venom),
         };
 
         MyMovieAdapter myMovieAdapter = new MyMovieAdapter(myMovieData,MainActivity.this);
